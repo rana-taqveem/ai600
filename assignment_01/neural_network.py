@@ -70,7 +70,7 @@ class NeuralNetwork:
             #print(winning_class_indices)
             delta_l = np.zeros_like(y_hat)
             delta_l[range(len(winning_class_indices)), winning_class_indices] = 1.0
-            print(delta_l.shape)
+            # print(delta_l.shape)
         else:
             # if self.loss_function == 'cross_entropy':
             #     delta_l = y_hat - y
@@ -80,7 +80,7 @@ class NeuralNetwork:
             for layer in reversed(self.layers):
                 delta_l = layer.backward(delta_l)
                 
-        print(delta_l.shape)
+        # print(delta_l.shape)
                 
         for layer in reversed(self.layers):
             delta_l = layer.backward(delta_l)
